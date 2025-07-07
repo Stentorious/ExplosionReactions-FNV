@@ -1,0 +1,31 @@
+ref rTarget
+ref rSource
+
+ref rProjectile
+ref rExplosion
+
+begin Function {rTarget, rSource}
+
+	if eval Goo1.AuxVarGetFlt "*ExplReact_Anim" > 0 || IsReference (rProjectile = GetSelfAlt) == 0 || (IsPC1stPerson == 0 && Goo1.AuxVarGetFlt "*ExplReact_INI" 7 == 0) || MenuMode || Player.GetIsRagdolled || Player.GetDead || GetPipBoyMode != 0
+		return
+	endif
+
+	; Filter explosion
+	rExplosion = rProjectile.GBO
+	if eval HasKeyword rExplosion "ExplReactWhitelist"
+	elseif eval Player.GetDistance3D rProjectile > (rProjectile.GetExplosionRefRadius * (Goo1.AuxVarGetFlt "*ExplReact_INI" 0)) || Abs (Player.GetHeadingAngle rProjectile) > Goo1.AuxVarGetFlt "*ExplReact_INI" 1 || GetExplosionTraitNumeric rExplosion 0 < Goo1.AuxVarGetFlt "*ExplReact_INI" 2 || GetExplosionTraitNumeric rExplosion 1 < Goo1.AuxVarGetFlt "*ExplReact_INI" 3 || (rSource == Player && Goo1.AuxVarGetFlt "*ExplReact_INI" 5) || HasKeyword rExplosion "ExplReactBlacklist"
+		return
+	endif
+
+	; Disable controls
+	if GSIV 0 > 0
+		SetSmoothIronsightsValue 0 0
+	endif
+	DisablePlayerControlsAltEx (30100 + (2048 * (Goo1.AuxVarGetFlt "*ExplReact_INI" 6)))
+
+	; Anim control
+	Player.PlayAnimationPath "ExplosionReactions\NoWeapon.kf" 1
+	Goo1.AuxVarSetFlt "*ExplReact_Anim" 1
+	Player.AuxTimerStart "*ExplReact_Anim" 1.5 14
+
+end

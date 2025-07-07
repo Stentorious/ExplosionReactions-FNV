@@ -1,0 +1,15 @@
+ref rOwner
+string_var sTimer
+
+int iTemp
+
+begin function {sTimer, rOwner}
+	if eval (iTemp = Goo1.AuxVarGetFlt "*ExplReact_Anim") == 1
+		Goo1.AuxVarSetFlt "*ExplReact_Anim" 2
+		AuxTimerStart "*ExplReact_Anim" (Goo1.AuxVarGetFlt "*ExplReact_INI" 4) 14
+		EnablePlayerControlsAltEx 32148
+	elseif eval iTemp == 2
+		Goo1.AuxVarSetFlt "*ExplReact_Anim" 0
+	endif
+	sv_Destruct sTimer
+end
