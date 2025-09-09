@@ -34,14 +34,16 @@ if GetPluginVersion "kNVSE" < 37
 endif
 
 ; Load INI settings
-Goo1.AuxVarSetFlt "*ExplReact_INI" (Clamp (GetINIFloat_Cached "General:fRadius" "Stentorious\ExplosionReactions.ini") 0 1) 0
-Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fHeadingAngle" "Stentorious\ExplosionReactions.ini")) 1
-Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fMinForce" "Stentorious\ExplosionReactions.ini")) 2
-Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fMinDamage" "Stentorious\ExplosionReactions.ini")) 3
+Goo1.AuxVarSetFlt "*ExplReact_INI" (Clamp (GetINIFloat_Cached "General:iRadius" "Stentorious\ExplosionReactions.ini") 0 100) 0
+Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:iHeadingAngle" "Stentorious\ExplosionReactions.ini")) 1
+Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:iMinForce" "Stentorious\ExplosionReactions.ini")) 2
+Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:iMinDamage" "Stentorious\ExplosionReactions.ini")) 3
 Goo1.AuxVarSetFlt "*ExplReact_INI" (GetMaxOf 0 (GetINIFloat_Cached "General:fCooldown" "Stentorious\ExplosionReactions.ini")) 4
-Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:bNPCOnly" "Stentorious\ExplosionReactions.ini") 5
-Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:bForceWalk" "Stentorious\ExplosionReactions.ini") 6
-Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:b3rdPerson" "Stentorious\ExplosionReactions.ini") 7
+Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:bForceWalk" "Stentorious\ExplosionReactions.ini") 5
+Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:bForceFirstPerson" "Stentorious\ExplosionReactions.ini") 6
+Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:bPlayerExplosions" "Stentorious\ExplosionReactions.ini") 7
+Goo1.AuxVarSetFlt "*ExplReact_INI" (eval GetINIFloat_Cached "General:bNPCExplosions" "Stentorious\ExplosionReactions.ini") 8
+
 
 ; Whitelist keywords
 AssignKeyword NVDLC04FlashBangExplosion "ExplReactWhitelist"

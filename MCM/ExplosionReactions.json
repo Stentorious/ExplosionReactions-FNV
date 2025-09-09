@@ -1,0 +1,97 @@
+{
+    "modName": "ExplosionReactions",
+    "displayName": "$modDisplayName",
+	"description": "$modDescription",
+    "saveFile": "Stentorious/ExplosionReactions.ini",
+    "minMCMVersion": 1.00,
+    "minModVersion": 1.00,
+    "requirements": [
+        { "type": "file", "file": "NVSE/plugins/scripts/ln_ExplosionReactions.txt" }
+    ],
+    "submenus": {
+        "0": {
+            "listTitle": "$modDisplayName",
+            "pageTitle": "$modDisplayName",
+            "active": 1,
+            "columns": 1,
+            "enable": 1,
+            "options": {
+                "1": {
+                    "title": "$General",
+                    "enable": 1,
+                    "type": 0
+				},
+                "2": {
+                    "title": "$ExplosionsPlayer",
+                    "enable": 1,
+                    "type": 5,
+                    "mouse": "$ExplosionsPlayerMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 7, "configINI": "General:bPlayerExplosions", "default": 1 }]
+                },
+                "3": {
+                    "title": "$ExplosionsNPC",
+                    "enable": 1,
+                    "type": 5,
+                    "mouse": "$ExplosionsNPCMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 8, "configINI": "General:bNPCExplosions", "default": 1 }]
+                },
+                "4": {
+                    "title": "$ForceWalk",
+                    "enable": 1,
+                    "type": 5,
+                    "mouse": "$ForceWalkMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 5, "configINI": "General:bForceWalk", "default": 0 }]
+                },
+                "5": {
+                    "title": "$ForceFirstPerson",
+                    "enable": 1,
+                    "type": 5,
+                    "mouse": "$ForceFirstPersonMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 6, "configINI": "General:bForceFirstPerson", "default": 0 }]
+                },
+                "6": {
+                    "title": "$Radius",
+                    "enable": 1,
+                    "type": 2,
+                    "mouse": "$RadiusMouse",
+                    "suffix": "%",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 0, "configINI": "General:iRadius", "default": 80 }],
+                    "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 100, "suffix": "%" }
+                },
+                "7": {
+                    "title": "$HeadingAngle",
+                    "enable": 1,
+                    "type": 2,
+                    "mouse": "$HeadingAngleMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 1, "configINI": "General:iHeadingAngle", "default": 50 }],
+                    "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 180 }
+                },
+                "8": {
+                    "title": "$ForceMin",
+                    "enable": 1,
+                    "type": 2,
+                    "mouse": "$ForceMinMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 2, "configINI": "General:iMinForce", "default": 1 }],
+                    "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 100 }
+                },
+                "9": {
+                    "title": "$DamageMin",
+                    "enable": 1,
+                    "type": 2,
+                    "mouse": "$DamageMinMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 3, "configINI": "General:iMinDamage", "default": 1 }],
+                    "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 100 }
+                },
+                "10": {
+                    "title": "$Cooldown",
+                    "enable": 1,
+                    "type": 2.5,
+                    "mouse": "$CooldownMouse",
+                    "suffix": "s",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 4, "configINI": "General:fCooldown", "default": 2.5 }],
+                    "scale": { "valueDecimal": 1, "valueIncrement": 0.1, "valueMin": 0, "valueMax": 10, "suffix": "s" }
+                }
+            }
+        }
+    }
+}
