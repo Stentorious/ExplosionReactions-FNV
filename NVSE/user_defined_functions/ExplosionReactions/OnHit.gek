@@ -13,9 +13,6 @@ begin Function {rTarget, rSource}
 	; Filter explosion
 	rExplosion = rProjectile.GBO
 
-	print $(GetExplosionTraitNumeric rExplosion 0)
-	print $(GetExplosionTraitNumeric rExplosion 1)
-
 	if eval HasKeyword rExplosion "ExplReactWhitelist"
 	elseif eval Player.GetDistance3D rProjectile > (rProjectile.GetExplosionRefRadius * ((Goo1.AuxVarGetFlt "*ExplReact_INI" 0) / 100)) || Abs (Player.GetHeadingAngle rProjectile) > Goo1.AuxVarGetFlt "*ExplReact_INI" 1 || GetExplosionTraitNumeric rExplosion 0 < Goo1.AuxVarGetFlt "*ExplReact_INI" 2 || GetExplosionTraitNumeric rExplosion 1 < Goo1.AuxVarGetFlt "*ExplReact_INI" 3 || HasKeyword rExplosion "ExplReactBlacklist"
 		return
