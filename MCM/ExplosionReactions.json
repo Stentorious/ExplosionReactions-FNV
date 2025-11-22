@@ -36,20 +36,27 @@
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 8, "configINI": "General:bNPCExplosions", "default": 1 }]
                 },
                 "4": {
+                    "title": "$PowerArmor",
+                    "enable": 1,
+                    "type": 5,
+                    "mouse": "$PowerArmorMouse",
+                    "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 9, "configINI": "General:bPowerArmor", "default": 1 }]
+                },
+                "5": {
                     "title": "$ForceWalk",
                     "enable": 1,
                     "type": 5,
                     "mouse": "$ForceWalkMouse",
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 5, "configINI": "General:bForceWalk", "default": 0 }]
                 },
-                "5": {
+                "6": {
                     "title": "$ForceFirstPerson",
                     "enable": 1,
                     "type": 5,
                     "mouse": "$ForceFirstPersonMouse",
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 6, "configINI": "General:bForceFirstPerson", "default": 0 }]
                 },
-                "6": {
+                "7": {
                     "title": "$Radius",
                     "enable": 1,
                     "type": 2,
@@ -58,7 +65,7 @@
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 0, "configINI": "General:iRadius", "default": 80 }],
                     "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 100, "suffix": "%" }
                 },
-                "7": {
+                "8": {
                     "title": "$HeadingAngle",
                     "enable": 1,
                     "type": 2,
@@ -66,7 +73,7 @@
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 1, "configINI": "General:iHeadingAngle", "default": 50 }],
                     "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 180 }
                 },
-                "8": {
+                "9": {
                     "title": "$ForceMin",
                     "enable": 1,
                     "type": 2,
@@ -74,7 +81,7 @@
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 2, "configINI": "General:iMinForce", "default": 1 }],
                     "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 100 }
                 },
-                "9": {
+                "10": {
                     "title": "$DamageMin",
                     "enable": 1,
                     "type": 2,
@@ -82,7 +89,7 @@
                     "vars": [{ "form": "Goo1", "auxVar": "*ExplReact_INI", "key": 3, "configINI": "General:iMinDamage", "default": 1 }],
                     "scale": { "valueDecimal": 0, "valueIncrement": 1, "valueMin": 0, "valueMax": 100 }
                 },
-                "10": {
+                "11": {
                     "title": "$Cooldown",
                     "enable": 1,
                     "type": 2.5,
